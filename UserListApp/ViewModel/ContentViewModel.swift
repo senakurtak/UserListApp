@@ -8,17 +8,24 @@
 import Foundation
 import UIKit
 
-class UserListViewModel {
+protocol UsersViewModelDelegate {
+    func onSuccessfullMoviesLoaded()
+}
+
+
+class ContentViewModel {
     
     var userList = [User]()
     
+    var delegate : UsersViewModelDelegate?
+    
     let networkManager = NetworkManager()
         
-    func restapiRead(tableView: UITableView){
+    func restapiRead(){
         networkManager.restapiRead { [self] result in
             userList = result
             DispatchQueue.main.async {
-                tableView.reloadData()
+                self.delegate?.onSuccessfullMoviesLoaded()
             }
         }
     }

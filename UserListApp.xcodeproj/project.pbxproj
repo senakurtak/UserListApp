@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B33ED03D29885BE900574FA8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33ED03C29885BE900574FA8 /* NetworkManager.swift */; };
-		B33ED03F29885D6C00574FA8 /* ExtensionContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33ED03E29885D6C00574FA8 /* ExtensionContentViewController.swift */; };
+		B33ED042298861B800574FA8 /* ContentViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33ED041298861B800574FA8 /* ContentViewModelTest.swift */; };
 		B39235C7298851BC0084B959 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = B39235C6298851BC0084B959 /* SDWebImage */; };
 		B39235C9298851BC0084B959 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B39235C8298851BC0084B959 /* SDWebImageMapKit */; };
 		B3E357B92986C16A008BDC2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E357B82986C16A008BDC2D /* AppDelegate.swift */; };
@@ -22,7 +22,7 @@
 		B3E357ED2986D010008BDC2D /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E357EB2986D010008BDC2D /* ContentViewController.swift */; };
 		B3E357EE2986D010008BDC2D /* ContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3E357EC2986D010008BDC2D /* ContentViewController.xib */; };
 		B3E357F02986D024008BDC2D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E357EF2986D024008BDC2D /* User.swift */; };
-		B3E357F22986D02D008BDC2D /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E357F12986D02D008BDC2D /* ViewModel.swift */; };
+		B3E357F22986D02D008BDC2D /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E357F12986D02D008BDC2D /* ContentViewModel.swift */; };
 		B3E357F92986E12D008BDC2D /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E357F72986E12D008BDC2D /* UserTableViewCell.swift */; };
 		B3E357FA2986E12D008BDC2D /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3E357F82986E12D008BDC2D /* UserTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -46,7 +46,7 @@
 
 /* Begin PBXFileReference section */
 		B33ED03C29885BE900574FA8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		B33ED03E29885D6C00574FA8 /* ExtensionContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionContentViewController.swift; sourceTree = "<group>"; };
+		B33ED041298861B800574FA8 /* ContentViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModelTest.swift; sourceTree = "<group>"; };
 		B3E357B52986C16A008BDC2D /* UserListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E357B82986C16A008BDC2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3E357BA2986C16A008BDC2D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 		B3E357EB2986D010008BDC2D /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		B3E357EC2986D010008BDC2D /* ContentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentViewController.xib; sourceTree = "<group>"; };
 		B3E357EF2986D024008BDC2D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		B3E357F12986D02D008BDC2D /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		B3E357F12986D02D008BDC2D /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		B3E357F72986E12D008BDC2D /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		B3E357F82986E12D008BDC2D /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +102,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		B33ED0402988615A00574FA8 /* ContentTest */ = {
+			isa = PBXGroup;
+			children = (
+				B33ED041298861B800574FA8 /* ContentViewModelTest.swift */,
+			);
+			path = ContentTest;
+			sourceTree = "<group>";
+		};
 		B3E357AC2986C169008BDC2D = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +147,7 @@
 		B3E357CE2986C16C008BDC2D /* UserListAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				B33ED0402988615A00574FA8 /* ContentTest */,
 				B3E357CF2986C16C008BDC2D /* UserListAppTests.swift */,
 			);
 			path = UserListAppTests;
@@ -156,7 +165,7 @@
 		B3E357E82986CFEF008BDC2D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				B3E357F12986D02D008BDC2D /* ViewModel.swift */,
+				B3E357F12986D02D008BDC2D /* ContentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -202,7 +211,6 @@
 			children = (
 				B3E357EB2986D010008BDC2D /* ContentViewController.swift */,
 				B3E357EC2986D010008BDC2D /* ContentViewController.xib */,
-				B33ED03E29885D6C00574FA8 /* ExtensionContentViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -360,9 +368,8 @@
 				B3E357ED2986D010008BDC2D /* ContentViewController.swift in Sources */,
 				B3E357B92986C16A008BDC2D /* AppDelegate.swift in Sources */,
 				B33ED03D29885BE900574FA8 /* NetworkManager.swift in Sources */,
-				B3E357F22986D02D008BDC2D /* ViewModel.swift in Sources */,
+				B3E357F22986D02D008BDC2D /* ContentViewModel.swift in Sources */,
 				B3E357F92986E12D008BDC2D /* UserTableViewCell.swift in Sources */,
-				B33ED03F29885D6C00574FA8 /* ExtensionContentViewController.swift in Sources */,
 				B3E357BB2986C16A008BDC2D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B33ED042298861B800574FA8 /* ContentViewModelTest.swift in Sources */,
 				B3E357D02986C16C008BDC2D /* UserListAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

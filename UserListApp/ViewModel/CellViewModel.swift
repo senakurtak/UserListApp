@@ -12,9 +12,10 @@ class UserCellViewModel {
     var imageUrl: URL?
     
     init(withUser user: User) {
-        self.fullName = "\(user.firstName ?? "") \(user.lastName ?? "")"
-        email = user.email ?? ""
-        guard let str = user.avatar, let url = URL(string: str) else {return}
+        self.fullName = "\(user.firstName) \(user.lastName)"
+        email = user.email
+        let str = user.avatar
+        let url = URL(string: str)
         self.imageUrl = url
     }
 }

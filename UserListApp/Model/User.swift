@@ -8,11 +8,11 @@
 // https://reqres.in/api/users?page=1
 
 import Foundation
-//
-// MARK: - User
-class Datum: Decodable {
+
+// MARK: - Result
+struct Result: Codable {
     let page, perPage, total, totalPages: Int
-    let data: [Datum]
+    let data: [User]
     let support: Support
 
     enum CodingKeys: String, CodingKey {
@@ -25,17 +25,21 @@ class Datum: Decodable {
 }
 
 // MARK: - Datum
-class User: Codable {
+struct User: Codable {
     let id: Int
-    let email: String?
-    let firstName : String?
-    let lastName: String?
-    let avatar: String?
-    
+    let email, firstName, lastName: String
+    let avatar: String
+
+    enum CodingKeys: String, CodingKey {
+        case id, email
+        case firstName = "first_name"
+        case lastName = "last_name"
+        case avatar
+    }
 }
-//
+
 // MARK: - Support
-class Support: Codable {
+struct Support: Codable {
     let url: String
     let text: String
 }

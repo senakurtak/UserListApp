@@ -22,7 +22,13 @@ class ContentViewController: UIViewController {
         
         userTableView.delegate = self
         userTableView.dataSource = self
-
+        restapiRead { [self] result in
+           userList = result
+            DispatchQueue.main.async {
+                self.userTableView.reloadData()
+            }
+            
+        }
     }
     
     func configure(){
@@ -36,13 +42,13 @@ class ContentViewController: UIViewController {
         let session = URLSession.shared
         let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
             do {
-                print(response!)
-                var user = try JSONDecoder().decode([User].self, from: data!)
-                completion(user)
-                print("user downloaded:\(user)")
+//                print(response!)
+                var result = try JSONDecoder().decode(Result.self, from: data!)
+                completion(result.data)
             } catch {
                 print("error")
             }
+    
         })
         task.resume()
     }
@@ -59,6 +65,9 @@ extension ContentViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
+        cell.userEmail.text = userList[indexPath.row].email
+        cell.userFirstName.text = userList[indexPath.row].firstName
+//        cell.userImage.image = userList[indexPath.row].avatar
         return cell
     }
     

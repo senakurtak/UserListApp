@@ -19,10 +19,16 @@ class ContentViewModel {
     
     var delegate : UsersViewModelDelegate?
     
-    let networkManager = NetworkManager()
-        
+//    let networkManagerShared = NetworkManager()
+      
+    var networkManager : NetworkMangerProtocol!
+    
+    init(networkManager: NetworkMangerProtocol){
+        self.networkManager = networkManager
+    }
+    
     func restapiRead(){
-        networkManager.restapiRead { [self] result in
+        networkManager.fetchUserInformations { [self] result in
             userList = result
             DispatchQueue.main.async {
                 self.delegate?.onSuccessfullMoviesLoaded()

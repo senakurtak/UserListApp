@@ -7,9 +7,13 @@
 
 import Foundation
 
-class NetworkManager {
+protocol NetworkMangerProtocol{
+     func fetchUserInformations(completion: @escaping ([User])-> Void)
+}
+
+class NetworkManager: NetworkMangerProtocol {
     
-    func restapiRead(completion: @escaping ([User])-> Void){
+    func fetchUserInformations(completion: @escaping ([User])-> Void){
         var request = URLRequest(url: URL(string: "https://reqres.in/api/users?page=1")!)
         request.httpMethod = "GET"
         let session = URLSession.shared

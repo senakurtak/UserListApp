@@ -14,8 +14,7 @@ class ContentViewController: UIViewController {
     
     @IBOutlet weak var userTableView: UITableView!
     
-    
-    var viewModel = ContentViewModel()
+    var viewModel = ContentViewModel(networkManager: NetworkManager())
     
     override func viewDidLoad() {
         super.viewDidLoad()

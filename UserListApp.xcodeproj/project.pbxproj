@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B33ED03D29885BE900574FA8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33ED03C29885BE900574FA8 /* NetworkManager.swift */; };
-		B33ED042298861B800574FA8 /* ContentViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33ED041298861B800574FA8 /* ContentViewModelTest.swift */; };
+		B33ED04C2988715200574FA8 /* UserInformationResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = B33ED04B2988715200574FA8 /* UserInformationResponse.json */; };
+		B33ED04E2988721C00574FA8 /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33ED04D2988721C00574FA8 /* Mockable.swift */; };
+		B33ED04F298877FC00574FA8 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33ED04529886DCA00574FA8 /* MockNetworkManager.swift */; };
 		B39235C7298851BC0084B959 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = B39235C6298851BC0084B959 /* SDWebImage */; };
 		B39235C9298851BC0084B959 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B39235C8298851BC0084B959 /* SDWebImageMapKit */; };
 		B3E357B92986C16A008BDC2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E357B82986C16A008BDC2D /* AppDelegate.swift */; };
@@ -46,7 +48,9 @@
 
 /* Begin PBXFileReference section */
 		B33ED03C29885BE900574FA8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		B33ED041298861B800574FA8 /* ContentViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModelTest.swift; sourceTree = "<group>"; };
+		B33ED04529886DCA00574FA8 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
+		B33ED04B2988715200574FA8 /* UserInformationResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserInformationResponse.json; sourceTree = "<group>"; };
+		B33ED04D2988721C00574FA8 /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
 		B3E357B52986C16A008BDC2D /* UserListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E357B82986C16A008BDC2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3E357BA2986C16A008BDC2D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,18 +106,19 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		B33ED0402988615A00574FA8 /* ContentTest */ = {
+		B33ED048298870E100574FA8 /* UserListAppTestIssues */ = {
 			isa = PBXGroup;
 			children = (
-				B33ED041298861B800574FA8 /* ContentViewModelTest.swift */,
+				B3E357DB2986C16C008BDC2D /* UserListAppUITestsLaunchTests.swift */,
 			);
-			path = ContentTest;
+			path = UserListAppTestIssues;
 			sourceTree = "<group>";
 		};
 		B3E357AC2986C169008BDC2D = {
 			isa = PBXGroup;
 			children = (
 				B3E357B72986C16A008BDC2D /* UserListApp */,
+				B33ED048298870E100574FA8 /* UserListAppTestIssues */,
 				B3E357CE2986C16C008BDC2D /* UserListAppTests */,
 				B3E357D82986C16C008BDC2D /* UserListAppUITests */,
 				B3E357B62986C16A008BDC2D /* Products */,
@@ -147,8 +152,10 @@
 		B3E357CE2986C16C008BDC2D /* UserListAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				B33ED0402988615A00574FA8 /* ContentTest */,
 				B3E357CF2986C16C008BDC2D /* UserListAppTests.swift */,
+				B33ED04529886DCA00574FA8 /* MockNetworkManager.swift */,
+				B33ED04B2988715200574FA8 /* UserInformationResponse.json */,
+				B33ED04D2988721C00574FA8 /* Mockable.swift */,
 			);
 			path = UserListAppTests;
 			sourceTree = "<group>";
@@ -157,7 +164,6 @@
 			isa = PBXGroup;
 			children = (
 				B3E357D92986C16C008BDC2D /* UserListAppUITests.swift */,
-				B3E357DB2986C16C008BDC2D /* UserListAppUITestsLaunchTests.swift */,
 			);
 			path = UserListAppUITests;
 			sourceTree = "<group>";
@@ -347,6 +353,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B33ED04C2988715200574FA8 /* UserInformationResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,8 +385,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B33ED042298861B800574FA8 /* ContentViewModelTest.swift in Sources */,
+				B33ED04F298877FC00574FA8 /* MockNetworkManager.swift in Sources */,
 				B3E357D02986C16C008BDC2D /* UserListAppTests.swift in Sources */,
+				B33ED04E2988721C00574FA8 /* Mockable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

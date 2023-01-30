@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ContentViewController: UIViewController {
     
@@ -67,7 +68,9 @@ extension ContentViewController : UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
         cell.userEmail.text = userList[indexPath.row].email
         cell.userFirstName.text = userList[indexPath.row].firstName
-//        cell.userImage.image = userList[indexPath.row].avatar
+        cell.userLastName.text = userList[indexPath.row].lastName
+        let urlString = "\(userList[indexPath.row].avatar)"
+        cell.userImage.sd_setImage(with: URL(string: urlString))
         return cell
     }
     
